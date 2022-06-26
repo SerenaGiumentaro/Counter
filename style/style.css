@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    font-family: 'Stick No Bills', sans-serif;
+}
+body,main,.buttons-container,footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+h1{
+    font-size: 60px;
+    margin: 40px;
+}
+.buttons-container{
+    flex-direction: row;
+}
+main{
+    width: 80%;
+    height: 600px;
+    border-radius: 30px;
+    background-image: linear-gradient( 132.6deg,  #478bd6 23.3%, #25dad4 84.7% );
+}
+footer{
+    width: 80%;
+    margin-top: 30px;
+}
+.attribution{
+    font-size: 10px;
+}
+.button-plus,.button-less,.button-less-ten,.button-plus-ten,.reset,.memo{
+    height: 100px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 80px;
+    text-align: center;
+    box-shadow: 0 0 15px #eee;
+    border-radius: 10px;
+    margin:  20px 40px;
+    font-family: 'Stick No Bills', sans-serif;
+
+}
+  
+.saved{
+    width: 500px;
+    height: 50px;
+    box-shadow: 0 0 10px #25dad4;
+    color: #25dad4;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 10px;
+    padding: 0 10px;
+    cursor: default;
+    position: relative;
+}
+.trash{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    border: none;
+    box-shadow: 2px 0 5px #25dad4;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    color: #25dad4;
+    background-image: url('/image/trash.png');
+
+}
+.button-plus,.button-less,.button-less-ten,.button-plus-ten{
+    width: 200px;
+}
+.reset,.memo{
+    width: 350px;
+}
+.counter{
+    cursor:default;
+    font-size: 100px;
+    color: #fff;
+}
+
+@media screen and (max-width:650px) {
+
+    .button-plus,.button-less,.button-less-ten,.button-plus-ten,.reset{
+        font-size: 50px;
+    }
+}
