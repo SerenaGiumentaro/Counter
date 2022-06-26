@@ -82,7 +82,7 @@ const storesCounter = () => {
     const newTrash = trash.cloneNode(true)
     newTrash.removeAttribute('hidden')
     savedCount.className = 'saved'
-    savedCount.textContent =  dateNow.toLocaleString() + ' ⇒ '+currentNumber
+    savedCount.textContent =  dateNow.toLocaleString() + ' ➡ '+currentNumber
     footer.append(savedCount)
     savedCount.append(newTrash)
 
@@ -102,12 +102,10 @@ resetButton.addEventListener('click', (resetAll))
 memoButton.addEventListener('click', (storesCounter))
 
 footer.addEventListener('click', (e) => {
-    console.log(e.target)
     let target = e.target
     if (target.className == 'trash'  ){
-        console.log('f')
+        target.parentNode.remove()
     }
-    
 })
 
 // keyboard events
@@ -128,4 +126,8 @@ document.addEventListener('keydown', (e) => {
     if(e.code == 'Backspace'){
         resetAll()
     }  
+
+    if(e.code == 'KeyM'){
+        storesCounter()
+    }
 })

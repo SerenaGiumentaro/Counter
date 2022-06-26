@@ -7,7 +7,7 @@ body{
     width: 100%;
     font-family: 'Stick No Bills', sans-serif;
 }
-body,main,.buttons-container,footer{
+body,main,.buttons-container,footer,.saved{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,18 +22,17 @@ h1{
 .buttons-container{
     flex-direction: row;
 }
+.display{
+    padding: 30px;
+}
 main{
     width: 80%;
-    height: 600px;
     border-radius: 30px;
-    background-image: linear-gradient( 132.6deg,  #478bd6 23.3%, #25dad4 84.7% );
+    background-image: linear-gradient( 132.6deg,  #478cd6be 23.3%, #25dad4 84.7% );
 }
 footer{
     width: 80%;
     margin-top: 30px;
-}
-.attribution{
-    font-size: 10px;
 }
 .button-plus,.button-less,.button-less-ten,.button-plus-ten,.reset,.memo{
     height: 100px;
@@ -47,34 +46,7 @@ footer{
     border-radius: 10px;
     margin:  20px 40px;
     font-family: 'Stick No Bills', sans-serif;
-
-}
-  
-.saved{
-    width: 500px;
-    height: 50px;
-    box-shadow: 0 0 10px #25dad4;
-    color: #25dad4;
-    font-size: 30px;
-    line-height: 50px;
-    margin: 10px;
-    padding: 0 10px;
-    cursor: default;
     position: relative;
-}
-.trash{
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    border: none;
-    box-shadow: 2px 0 5px #25dad4;
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    border-radius: 50%;
-    color: #25dad4;
-    background-image: url('../image/trash.png');
 
 }
 .button-plus,.button-less,.button-less-ten,.button-plus-ten{
@@ -83,15 +55,84 @@ footer{
 .reset,.memo{
     width: 350px;
 }
+.button-less-ten::after,.button-plus-ten::after,.button-less::after,.button-plus::after,.reset::after,.memo::after{
+    position:absolute;
+    font-size: 15px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+.button-plus-ten::after{
+    content:'Shift + ⇨';
+}
+.button-less-ten::after{
+    content: 'Shift + ⇦'
+}
+.button-less::after{
+    content: '⇦';
+}
+.button-plus::after{
+    content: '⇨';
+}
+.reset::after{
+    content: 'Backspace';
+}
+.memo::after{
+    content: 'M key';
+}
+  
+.saved{
+    width: 440px;
+    height: 50px;
+    box-shadow: 0 0 10px #25dad4;
+    color: #25dad4;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 10px;
+    padding: 0 10px;
+    cursor: default;
+    justify-content: space-between;
+    flex-direction: row;
+    /* position: relative; */
+    /* padding-left: 40px; */
+    
+}
+.trash{
+    height: 40px;
+    width: 40px;
+    border: none;
+    box-shadow: 2px 0 7px #25dad4;
+    cursor: pointer;
+    /* position: absolute; */
+    /* right: 5px; */
+    /* top: 5px; */
+    border-radius: 50%;
+    color: #25dad4;
+    background-image: url('../image/trash.png');
+
+}
+
 .counter{
     cursor:default;
     font-size: 100px;
     color: #fff;
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:550px) {
+    .reset,.memo{
+        width: 200px;
+    }
 
-    .button-plus,.button-less,.button-less-ten,.button-plus-ten,.reset{
-        font-size: 50px;
+    .saved{
+        height: 100px;
+        width: 300px;
+        flex-wrap: nowrap;
+    }
+
+}
+
+@media screen  and (max-width: 1400px) and (min-width:1050px){
+    .button-plus,.button-less,.button-less-ten,.button-plus-ten{
+        width: 300px;
     }
 }
