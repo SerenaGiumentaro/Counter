@@ -74,7 +74,7 @@ footer{
     top: 5px;
     border-radius: 50%;
     color: #25dad4;
-    background-image: url('/image/trash.png');
+    background-image: url('../image/trash.png');
 
 }
 .button-plus,.button-less,.button-less-ten,.button-plus-ten{
