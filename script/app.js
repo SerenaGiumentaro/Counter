@@ -105,7 +105,7 @@ footer.addEventListener('click', (e) => {
     let target = e.target
     if (target.className == 'trash'  ){
         target.parentNode.remove()
-    }
+    }else return
 })
 
 // keyboard events
