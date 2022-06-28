@@ -35,6 +35,33 @@ You can storage all the value you need using the `M` button
 
 ![store view](./image/stores-view.png)
 
+So now you can have the date and the time when that value was saved. And when you don't need it anymore just click on `trush` button.
+
+Also you use your keyboard:
+- `plus` = `Right Arrow`
+- `less` = `Left Arrow`
+- `plus ten` = `Shift` + `Right Arrow`
+- `less ten` = `Shift` + `Left Arrow`
+- `Reset` = `Backspace`
+- `M` = `M key`
+
+### Responsive
+
+You can use this counter on all device you want
+
+#### Tablet device
+
+![tablet version](./image/tablet.png)
+
+#### Mobile device
+
+![mobile version](./image/mobile.jpeg)
+
+## Contact
+
+Giumentaro Serena https://www.linkedin.com/in/serenagiumentaro/
+
+Project Link https://giumentarocounter.netlify.app/
 
 
 
