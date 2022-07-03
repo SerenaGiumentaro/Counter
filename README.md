@@ -13,14 +13,14 @@
 
 ### About the project
 
-This project rapresents a counter.
-You can use it to count everything you want, from how many donuts you ate yesterday to the score you give all your ex boyfriends.
+This project represents a counter.
+You can use it to count everything you want, from how many donuts you ate yesterday to the score you give to all your ex partners.
 
 ![desktop image](./image/desktop.png)
 
 #### Built with
 
-This projects is built with:
+This project is built with:
 - HTML
 - CSS
 - Javascript
@@ -28,16 +28,17 @@ This projects is built with:
 ### Usage
 
 The counter is very intuitive to use. 
-You have the `plus` button for increment the value and the `less` button for decrement the value. If you need to count a large mount of value, you can add ten times using `plus ten` button or remove ten times using `less ten` button.
+You can increment the value with the `plus` button and you can use the `less` button to decrement it. If you need to count a very high figure, you can add a value equal to ten using the `plus ten` button or subtract the same value with the `less ten` button.
 When you want start again just use `Reset` button.
 
 You can storage all the value you need using the `M` button
 
 ![store view](./image/stores-view.png)
 
-So now you can have the date and the time when that value was saved. And when you don't need it anymore just click on `trush` button.
+By doing so, it will give you the date and time the value was saved. And when you don't need it anymore, you just click on the `trush` button.
 
-Also you use your keyboard:
+You can also use keyboard shortcuts:
+
 - `plus` = `Right Arrow`
 - `less` = `Left Arrow`
 - `plus ten` = `Shift` + `Right Arrow`
@@ -47,7 +48,7 @@ Also you use your keyboard:
 
 ### Responsive
 
-You can use this counter on all device you want
+You can use this counter on several devices.
 
 #### Tablet device
 
