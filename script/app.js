@@ -4,69 +4,51 @@ const display = document.querySelector('.display')
 const buttonsContainer = document.querySelector('.buttons-container')
 const footer = document.querySelector('footer')
 const trash = document.querySelector('.trash')
-const buttonPlus = document.createElement('button')
-const buttonLess = document.createElement('button')
-const buttonPlusTen = document.createElement('button')
-const buttonLessTen = document.createElement('button')
-const counterDisplay = document.createElement('span')
-const resetButton = document.createElement('button')
-const memoButton = document.createElement('button')
 let dateNow = new Date()
 let currentNumber = 0
 
-// adding class elements
-buttonPlus.className = 'button-plus'
-buttonLess.className = 'button-less'
-buttonLessTen.className = 'button-less-ten'
-buttonPlusTen.className = 'button-plus-ten'
-counterDisplay.className = 'counter'
-resetButton.className = 'reset'
-memoButton.className = 'memo'
+// function for create element 
+function setUpElement(typeElem,classElem,content,parentToAppend){
+    let nameElem = document.createElement(typeElem)
+    nameElem.className = classElem
+    nameElem.innerHTML = content
+    parentToAppend.append(nameElem)
+    return nameElem
+}
 
-
-// append elements to document
-display.append(counterDisplay)
-buttonsContainer.append(buttonLess)
-buttonsContainer.append(buttonPlus)
-buttonsContainer.append(buttonLessTen)
-buttonsContainer.append(buttonPlusTen)
-buttonsContainer.append(resetButton)
-buttonsContainer.append(memoButton)
-
-
-// adding contents
-counterDisplay.innerHTML = currentNumber
-buttonLess.innerHTML = '-'
-buttonPlus.innerHTML = '+'
-buttonLessTen.innerHTML = '- 10'
-buttonPlusTen.innerHTML = '+ 10'
-resetButton.innerHTML = 'Reset'
-memoButton.innerHTML = 'M'
+// creating element 
+const buttonPlus = setUpElement('button','button-plus','+',buttonsContainer);
+const buttonLess = setUpElement('button','button-less','-',buttonsContainer)
+const buttonLessTen = setUpElement('button','button-less-ten','-10',buttonsContainer)
+const buttonPlusTen = setUpElement('button','button-plus-ten','+10',buttonsContainer)
+const resetButton = setUpElement('button','reset','Reset',buttonsContainer)
+const memoButton = setUpElement('button','memo','M',buttonsContainer)
+const counterDisplay = setUpElement('span','counter',currentNumber,display)
 
 
 // functions
 
 //decrement by one
 const lessOne = () => {    
-    currentNumber = --currentNumber
+    currentNumber -= 1
     counterDisplay.innerHTML = currentNumber
 }
 
 //increment by one
 const plusOne = () => {
-    currentNumber = ++currentNumber
+    currentNumber += 1
     counterDisplay.innerHTML = currentNumber
 }
 
 //increment by ten
 const plusTen = () => {
-    currentNumber = currentNumber + 10
+    currentNumber += 10
     counterDisplay.innerHTML = currentNumber
 }
 
 //decrement by ten
 const lessTen = () => {
-    currentNumber = currentNumber -10
+    currentNumber -= 10
     counterDisplay.innerHTML = currentNumber
 }
 
@@ -105,29 +87,36 @@ footer.addEventListener('click', (e) => {
     let target = e.target
     if (target.className == 'trash'  ){
         target.parentNode.remove()
-    }else return
+    }
 })
 
 // keyboard events
 document.addEventListener('keydown', (e) => {
+    
+    switch (e.code){
+        case (e.shiftKey && 'ArrowLeft'):
+            lessTen()
+            break
 
-    if (e.code == 'ArrowLeft' && e.shiftKey){
-        lessTen()
-    }else if (e.code ==  'ArrowLeft'){
-        lessOne()        
+        case 'ArrowLeft':
+            lessOne()
+            break
+        
+        case (e.shiftKey &&'ArrowRight'):
+            plusTen()
+            break
+
+        case 'ArrowRight':
+            plusOne()
+            break
+
+        case 'Backspace':
+            resetAll()
+            break
+
+        case 'KeyM':
+            storesCounter()
+            break
     }
 
-    if (e.code == 'ArrowRight' && e.shiftKey){
-        plusTen()
-    }else if (e.code == 'ArrowRight'){
-        plusOne()
-    }
-
-    if(e.code == 'Backspace'){
-        resetAll()
-    }  
-
-    if(e.code == 'KeyM'){
-        storesCounter()
-    }
 })
